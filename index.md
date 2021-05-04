@@ -2,6 +2,11 @@
 title: Квітникарство. Таємний блоґ на тему квітів
 ---
 
-{% for post in site.posts %}
-- [{{ post.date | date: "%Y-%m-%d" }}: {{ post.title }}]({{ post.url }})
-{% endfor %}
+<ul class="index-post-list">
+{%- for post in site.posts %}
+  <li>
+    <p><a href="{{ post.url }}">{{ post.date | date: "%Y-%m-%d" }}: {{ post.title }}</a></p>
+    {{ post.excerpt }}
+  </li>
+{%- endfor %}
+</ul>
