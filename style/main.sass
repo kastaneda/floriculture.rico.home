@@ -1,6 +1,9 @@
 ---
 ---
 
+html
+  min-height: 100%
+
 body
   max-width: 45em
   margin: 0 auto
@@ -8,28 +11,47 @@ body
   font-family: 'Roboto Light', 'Liberation Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
   font-weight: 300
   font-size: 125%
-  background: #243
-  color: #bcc
+  background: #efe
+  background: linear-gradient(180deg, #eff, #afb)
+  color: #262
 
 h1, h2, h3
   font-family: 'Liberation Serif', 'Droid Serif', 'Times New Roman', serif
   font-style: italic
   font-weight: 300
-  color: #afb
+  color: #c84
 
 p
   margin: 1em 0
 
 a
-  text-decoration: underline #558
-  color: #aaf
-
+  color: #06b
+  text-decoration: underline
   &:visited
-    color: #faf
-
-  &:hover
-    text-decoration-color: inherit
+    color: #468
+  &:hover, &:focus
+    text-decoration: none
+  &:active
+    background: yellow
+  &:focus
+    outline: medium dotted
 
 .index-post-list
   li p+p
     margin-top: -.75em
+
+@media (prefers-color-scheme: dark)
+  body
+    background: #242
+    background: linear-gradient(180deg, #444, #242)
+    color: #acc
+
+  h1, h2, h3
+    color: #afb
+
+  a
+    color: #aec
+    &:visited
+      color: #bca
+    &:active
+      background: #000
