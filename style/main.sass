@@ -5,15 +5,18 @@ html
   min-height: 100%
 
 body
-  max-width: 45em
+  max-width: 48em
   margin: 0 auto
-  padding: 1em
+  padding: 0
   font-family: 'Roboto Light', 'Liberation Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
   font-weight: 300
   font-size: 125%
-  background: #efe
-  background: linear-gradient(180deg, #eff, #afb)
+  line-height: 1.35
+  background: #efe linear-gradient(180deg, #eff, #afb)
   color: #262
+
+main
+  margin: 2em 1em
 
 h1, h2, h3
   font-family: 'Liberation Serif', 'Droid Serif', 'Times New Roman', serif
@@ -21,8 +24,12 @@ h1, h2, h3
   font-weight: 300
   color: #c84
 
-p
+h1, h2, h3, p, ul
   margin: 1em 0
+
+.index-post-list
+  li p+p
+    margin-top: -.75em
 
 a
   color: #06b
@@ -35,10 +42,6 @@ a
     background: yellow
   &:focus
     outline: medium dotted
-
-.index-post-list
-  li p+p
-    margin-top: -.75em
 
 @media (prefers-color-scheme: dark)
   body
