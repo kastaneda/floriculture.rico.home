@@ -7,9 +7,9 @@ build: img
 
 img: $(JPG_THUMB) $(WEBP_ALL)
 
-%.thumb.jpg: %.jpg
-	convert -define jpeg:size=400x400 $< \
-	  -thumbnail 200x200^ -gravity center -extent 200x200 $@
+%.thumb.jpg: %.jpg Makefile
+	convert -define jpeg:size=600x600 $< \
+	  -thumbnail 300x300^ -gravity center -extent 300x300 $@
 
 %.webp: %.jpg
 	cwebp $< -o $@
