@@ -1,0 +1,10 @@
+#!/bin/sh
+rm frames/*
+c=0
+for if in `find 2021* -type f | sort`
+do
+  of=frames/`printf %04d $c`.jpg
+  echo $if $of
+  convert $if -crop 300x300+420+540 $of
+  c=`expr $c + 1`
+done

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# ffmpeg -i frames/%04d.jpg plant.mp4
+
+ffmpeg -framerate 10 -i frames/%04d.jpg \
+  -r 25 -c:v libx264 -pix_fmt yuv420p -crf 23 \
+  -y plant.mp4
+
+ffmpeg -framerate 10 -i frames/%04d.jpg \
+  -c:v libvpx -qmin 0 -qmax 50 -crf 5 \
+  -y plant.webm
