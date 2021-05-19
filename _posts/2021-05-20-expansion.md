@@ -38,23 +38,23 @@ date: 2021-05-20 00:50:00 +03:00
 Якось так:
 
 ```
+--
 -- Arduino ADC-to-SQL connector, version 0.0.1
 --
 -- Current EEPROM configuration:
 --   board_id = 1
---   loop_delay = 30 sec
---   ADC_sensors = A0 A1 A2
+--   delay    = 30 sec
+--   sensors  = [A0, A1, A2]
 --
--- Type a command (try HELP) and press <Enter>
 
 help
 
+--
 -- Supported commands:
 --   ID <int>     to set board_id
 --   DELAY <int>  to set loop delay
---   ADC <int> [<int> ...]
-
-adc 0 1 2 3 6 7
+--   ADC <int> [<int>] [...]
+--
 ```
 
 [1]: https://twitter.com/kastaneda/status/1393586211910995975
