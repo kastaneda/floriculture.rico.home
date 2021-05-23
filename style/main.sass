@@ -38,6 +38,13 @@ li
   li p+p
     margin-top: -.75em
 
+table, tr, th, td
+  border-collapse: collapse
+
+th, td
+  border: thin solid
+  padding: .125rem .25rem
+
 a
   color: #06b
   text-decoration: underline
@@ -49,6 +56,35 @@ a
     background: yellow
   &:focus
     outline: medium dotted
+
+.highlight
+
+  // comments
+  .c, .cm, .cp, .c1, .cs
+    font-style: italic
+    color: #8a8
+
+  // keywords
+  .k, .kc, .kd, .kn, .kp, .kr .kt
+    font-weight: bold
+    color: #000
+
+  // numbers
+  .m, .mf, .mh, .mi, .mo, .il
+    color: #4a4
+
+  // names
+  .n, .na, .nb, .nc, .no, .nd, .ni, .ne, .nf, .nl, .nn, .nx, .py, .nt, .nv, .bp, .vc, .vg, .vi
+    color: #66a
+
+  // operators and punctuation
+  .o, .p, .ow
+    font-weight: bold
+    color: #826
+
+  // strings
+  .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss
+    color: #862
 
 @media (prefers-color-scheme: dark)
   body
@@ -65,3 +101,17 @@ a
       color: #bca
     &:active
       background: #000
+
+  .highlight
+    .c, .cm, .cp, .c1, .cs
+      color: #486
+    .k, .kc, .kd, .kn, .kp, .kr .kt
+      color: #fff
+    .m, .mf, .mh, .mi, .mo, .il
+      color: #4c4
+    .n, .na, .nb, .nc, .no, .nd, .ni, .ne, .nf, .nl, .nn, .nx, .py, .nt, .nv, .bp, .vc, .vg, .vi
+      color: #8ac
+    .o, .p, .ow
+      color: #a48
+    .s, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .sr, .s1, .ss
+      color: #a84
