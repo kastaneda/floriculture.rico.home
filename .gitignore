@@ -2,4 +2,7 @@
 /.jekyll-cache/
 /.sass-cache/
 *.thumb.jpg
+*.mid.jpg
 *.webp
+_data/images.json
+style/photoswipe/
