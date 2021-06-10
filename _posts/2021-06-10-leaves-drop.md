@@ -7,3 +7,10 @@ date: 2021-06-10 13:30:00 +03:00
 
 {% include photo.html img="130206" %}
 
+P.S. Трохи пороздивлявся у мікроскоп, і схоже, що листочок був саме механічно обірваний. Не відсох. Може, я якось випадково його обірвав, а може вітер.
+
+{% include photo.html img="160232" -%}
+{% include photo.html img="160325" -%}
+{% include photo.html img="160417" -%}
+{% include photo.html img="160508" -%}
+{% include photo.html img="160612" %}
