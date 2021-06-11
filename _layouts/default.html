@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title | escape }}</title>
-    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/pswp/photoswipe.css"> 
+    <link rel="stylesheet" href="/pswp/default-skin/default-skin.css"> 
     <link rel="icon" href="/favicon.png" type="image/png">
   </head>
   <body>
@@ -14,6 +16,10 @@
 {{ content }}
 
     </main>
-    <script src="/style/main.js"></script>
+
+{% include pswp-root.html %}
+    <script src="/pswp/photoswipe.min.js"></script> 
+    <script src="/pswp/photoswipe-ui-default.min.js"></script> 
+    <script src="/main.js"></script>
   </body>
 </html>

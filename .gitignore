@@ -1,8 +1,8 @@
 /_site/
 /.jekyll-cache/
 /.sass-cache/
-*.thumb.jpg
-*.mid.jpg
+*.300.jpg
+*.1200.jpg
 *.webp
 _data/images.json
-style/photoswipe/
+pswp

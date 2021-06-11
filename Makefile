@@ -1,29 +1,32 @@
-JPG = $(shell find 20*/ -type f -name '*.jpg' | grep -v thumb | grep -v mid)
-JPG_THUMB = $(patsubst %.jpg,%.thumb.jpg,$(JPG))
-JPG_MID = $(patsubst %.jpg,%.mid.jpg,$(JPG))
-WEBP_ALL = $(patsubst %.jpg,%.webp,$(JPG) $(JPG_THUMB) $(JPG_MID))
-IMAGES_ALL = $(JPG) $(JPG_THUMB) $(JPG_MID) $(WEBP_ALL)
+JPG := $(shell find 20*/ -type f -name '*.jpg' | grep -v \\.300\\. | grep -v \\.1200\\.)
+JPG_300 = $(patsubst %.jpg,%.300.jpg,$(JPG))
+#JPG_1200 = $(patsubst %.jpg,%.1200.jpg,$(JPG))
+JPG_1200 =
+WEBP_ALL = $(patsubst %.jpg,%.webp,$(JPG) $(JPG_300) $(JPG_1200))
+IMAGES_ALL = $(JPG_300) $(JPG_1200) $(WEBP_ALL)
 
-build: img _data/images.json
+build: img _data/images.json pswp
 	jekyll b
 
 img: $(IMAGES_ALL)
 
-%.thumb.jpg: %.jpg
-	convert -define jpeg:size=600x600 $< \
-	  -thumbnail 300x300^ -gravity center -extent 300x300 $@
+%.300.jpg: %.jpg
+	convert $< -gravity center -thumbnail '400x400>' -thumbnail 300x300^ $@
 
-%.mid.jpg: %.jpg
-	convert $< -thumbnail 1280x1280^ $@
+#%.1200.jpg: %.jpg
+#	convert $< -thumbnail 1200x1200^ $@
 
 %.webp: %.jpg
 	cwebp $< -o $@
 
-_data/images.json: $(IMAGES_ALL) Makefile
+_data/images.json: $(JPG) $(JPG_1200)
 	mkdir -p _data
 	echo "[" > $@
-	identify -format "{ 'file': '/%d/%f', 'width': %w, 'height': %h },\n" $(IMAGES_ALL) >> $@
+	identify -format "{ 'file': '/%d/%f', 'width': %w, 'height': %h },\n" $< >> $@
 	echo "{ 'file': 'stub' }" >> $@
 	echo "]" >> $@
+
+pswp:
+	svn checkout https://github.com/dimsemenov/PhotoSwipe/trunk/dist $@
 
 .PHONY: img build
