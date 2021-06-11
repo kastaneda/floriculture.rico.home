@@ -19,10 +19,10 @@ img: $(IMAGES_ALL)
 %.webp: %.jpg
 	cwebp $< -o $@
 
-_data/images.json: $(JPG) $(JPG_1200)
+_data/images.json: $(JPG)
 	mkdir -p _data
 	echo "[" > $@
-	identify -format "{ 'file': '/%d/%f', 'width': %w, 'height': %h },\n" $< >> $@
+	identify -format "{ 'file': '/%d/%f', 'width': %w, 'height': %h },\n" $(JPG) >> $@
 	echo "{ 'file': 'stub' }" >> $@
 	echo "]" >> $@
 
