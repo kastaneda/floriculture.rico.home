@@ -49,10 +49,6 @@ a
   color: #06b
   text-decoration: underline
 
-  &.thumbnail
-    display: inline-block
-    text-decoration: none
-
   &:visited
     color: #468
   &:hover, &:focus
@@ -61,6 +57,11 @@ a
     background: yellow
   &:focus
     outline: medium dotted
+
+  &.thumbnail
+    display: inline-block
+    text-decoration: none
+    background: none !important
 
 .thumbnail picture, .thumbnail img
   object-fit: cover
