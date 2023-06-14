@@ -6,3 +6,4 @@
 *.webp
 _data/images.json
 pswp
+/*.tar.gz
