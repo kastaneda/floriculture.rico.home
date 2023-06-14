@@ -42,10 +42,10 @@ up: $(ASSETS)
 %.webp: %.jpg
 	cwebp $< -o $@
 
-_data/images.json: $(JPG)
+_data/images.json: $(SRC_JPG)
 	mkdir -p _data
 	echo "[" > $@
-	identify -format "{ 'file': '/%d/%f', 'width': %w, 'height': %h },\n" $(JPG) >> $@
+	identify -format "{ 'file': '/%d/%f', 'width': %w, 'height': %h },\n" $(SRC_JPG) >> $@
 	echo "{ 'file': 'stub' }" >> $@
 	echo "]" >> $@
 
